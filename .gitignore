@@ -1,0 +1,18 @@
+# Ignorar archivos específicos de Flutter
+**/google-services.json
+
+# Flutter general
+**/doc/api/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+
+# Archivos comunes de sistema
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store

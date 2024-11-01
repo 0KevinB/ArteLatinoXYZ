@@ -1,0 +1,30 @@
+buildscript {
+        repositories {
+        google() // Asegúrate de que esta línea esté presente
+        mavenCentral() // También asegúrate de tener esta línea
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.google.gms:google-services:4.3.14' // Asegúrate de tener la última versión
+    }
+}
+
+allprojects {
+    repositories {
+        google() 
+        mavenCentral()
+    }
+}
+
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
